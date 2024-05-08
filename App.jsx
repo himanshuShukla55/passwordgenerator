@@ -119,6 +119,17 @@ const App = () => {
                     keyboardType="numeric"
                   />
                 </View>
+                {touched.passwordLength &&
+                  !(
+                    useUpperCase ||
+                    useLowerCase ||
+                    useNumbers ||
+                    useSymbols
+                  ) && (
+                    <Text style={styles.errorText}>
+                      Please select one among the following:
+                    </Text>
+                  )}
                 <View style={styles.inputWrapper}>
                   <Text style={styles.heading}>Inclues Lowercase</Text>
                   <BouncyCheckbox
